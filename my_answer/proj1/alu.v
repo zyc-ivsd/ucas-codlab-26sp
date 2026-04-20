@@ -1,6 +1,6 @@
 `timescale 10 ns / 1 ns
 
-`define DATA_WIDTH 32
+`define DATA_WIDTH 32                         //alu是适用于proj2的最终版本,不完全对标proj1,参考时注意
 
 module alu(
 	input  [`DATA_WIDTH - 1:0]  A,
