@@ -1,8 +1,8 @@
 `timescale 10 ns / 1 ns
 
-`define DATA_WIDTH 32                         //alu是适用于proj2的最终版本,不完全对标proj1,参考时注意
+`define DATA_WIDTH 32
 
-module alu(
+module alu(                                   //alu是适用于proj2的最终版本，不完全适用于proj1
 	input  [`DATA_WIDTH - 1:0]  A,
 	input  [`DATA_WIDTH - 1:0]  B,
 	input  [              2:0]  ALUop,
@@ -29,7 +29,7 @@ module alu(
 	assign Signed_B = (ALUop[2] | ALUop[0])? ~B:B;   //110 --sub --> A+(~B+1),  010 -- add -->a+B 
 	assign Cin = ALUop[2] | ALUop[0];   
 	assign add_res = A + Signed_B + Cin; 
-	assign CarryOut = (ALUop[2])? ~add_res[`DATA_WIDTH] : add_res[`DATA_WIDTH];
+	assign CarryOut = (ALUop[2] | ALUop[0])? ~add_res[`DATA_WIDTH] : add_res[`DATA_WIDTH];
 	assign Overflow = (A[`DATA_WIDTH-1] == Signed_B[`DATA_WIDTH-1]) && 
 	(A[`DATA_WIDTH-1] ^ add_res[`DATA_WIDTH-1]);
 	assign slt = {31'd0,(add_res[`DATA_WIDTH-1] ^ Overflow)};
