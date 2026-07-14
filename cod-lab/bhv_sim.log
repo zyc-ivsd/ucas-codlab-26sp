@@ -1,0 +1,11 @@
+WARNING: fpga/design/ucas-cod/hardware/sim/../sources/../wrapper/simple_cpu/ideal_mem.v:47: $readmemh: The behaviour for reg[...] mem[N:0]; $readmemh("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemh("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+WARNING: fpga/design/ucas-cod/hardware/sim/../sources/../wrapper/simple_cpu/ideal_mem.v:47: $readmemh(software/workload/ucas-cod/benchmark/simple_test/basic/riscv32/sim/memcpy.mem): Not enough words in the file for the requested range [0:1023].
+WARNING: fpga/design/ucas-cod/hardware/sim/../sources/../wrapper/simple_cpu/ideal_mem.v:47: $readmemh: The behaviour for reg[...] mem[N:0]; $readmemh("...", mem); changed in the 1364-2005 standard. To avoid ambiguity, use mem[0:N] or explicit range parameters $readmemh("...", mem, start, stop);. Defaulting to 1364-2005 behavior.
+WARNING: fpga/design/ucas-cod/hardware/sim/../sources/../wrapper/simple_cpu/ideal_mem.v:47: $readmemh(software/workload/ucas-cod/benchmark/simple_test/basic/riscv32/sim/memcpy.mem): Not enough words in the file for the requested range [0:1023].
+FST info: dumpfile fpga/sim_out/simple_cpu/dump.fst opened for output.
+=================================================
+ERROR: at                  105ns, PC = 0x00000000.
+Yours:     RF_wen = 1, RF_waddr = 0x05, RF_wdata = 0x00000001
+Reference: RF_wen = 0, RF_waddr = 0x00, RF_wdata = 0x00000000
+=================================================
+fpga/design/ucas-cod/hardware/sim/simple_cpu/multi_cycle/simple_cpu_test.v:201: $finish called at 105000 (1ps)
