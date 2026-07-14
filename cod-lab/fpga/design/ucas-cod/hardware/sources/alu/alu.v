@@ -1,5 +1,5 @@
 `timescale 10 ns / 1 ns
-
+                                                  //适用于最终项目的alu,包含了乘法以及riscv32解码,prj1的alu不要抄这个
 `define DATA_WIDTH 32
 
 module alu(
